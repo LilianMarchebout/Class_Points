@@ -112,7 +112,7 @@ class Fonction:
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(1,0,0)
+    f = Fonction(2,0)
     f.tracage()
     f.derive().tracage()
     print(f)
