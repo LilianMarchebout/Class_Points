@@ -88,7 +88,7 @@ class Fonction:
         tortue.up()
         for i in range(-1800,1800):
             u = i/10
-            tortue.goto(u/0.075, self.y(u)/0.075)
+            tortue.goto(u, self.y(u))
             tortue.down()
             tortue.ht()
         tortue.up()
