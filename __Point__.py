@@ -169,6 +169,7 @@ class Point:
         return Bary
     def vecteur(self, other):
         v = cv.Vecteur("V["+ self.name + other.name + "]", other.x-self.x, other.y-self.y)
+        return v
 
 
 if __name__ == "__main__":
