@@ -86,8 +86,9 @@ class Fonction:
         tortue = fonc.tortue()
         tortue.speed("fastest")
         tortue.up()
-        for i in range(-180,180):
-            tortue.goto(i/0.5, self.y(i)/0.5)
+        for i in range(-1800,1800):
+            u = i/10
+            tortue.goto(u/0.075, self.y(u)/0.075)
             tortue.down()
             tortue.ht()
         tortue.up()
@@ -111,11 +112,11 @@ class Fonction:
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(1,1,1,1,1,0)
+    f = Fonction(1,0,0)
     f.tracage()
-    print(f)
-    print(f.derive().y(5))
     f.derive().tracage()
+    print(f)
+    print(f.derive())
     print("Fin du module.")
     while 1:
         os.system("pause")
