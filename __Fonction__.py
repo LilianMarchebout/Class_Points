@@ -101,6 +101,7 @@ class Fonction:
             coefDerive.append(n*self.coef[element])
         derive = Fonction(coefDerive)
         for i in range(nombre_derive-1):
+            i = i
             derive = derive.derive()
         return derive
 
@@ -113,7 +114,7 @@ if __name__ == "__main__":
     f = Fonction(1,1,1,1,1,0)
     f.tracage()
     print(f)
-    print(f.derive())
+    print(f.derive().y(5))
     f.derive().tracage()
     print("Fin du module.")
     while 1:
