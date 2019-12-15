@@ -50,7 +50,7 @@ class Point:
         self.x = rd.randint(-250,250)
         dictPoint[str(self.name)] = self
         return self
-    def random_x(self, dictPoint):
+    def random_y(self, dictPoint):
         """
         Redefinit l'ordonnee du point aléatoirement
         """
