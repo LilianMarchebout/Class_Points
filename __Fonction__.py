@@ -86,8 +86,9 @@ class Fonction:
         tortue = fonc.tortue()
         tortue.speed(0)
         tortue.up()
-        for i in range(-1800,1800):
-            u = i/10
+        precision = 1800
+        for i in range(-precision,precision):
+            u = i*(1800/precision)
             tortue.goto(u, self.y(u))
             tortue.down()
             tortue.ht()
