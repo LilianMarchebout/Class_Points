@@ -77,12 +77,12 @@ class Fonction:
                 x1 = ((-(self.coef[1]))-math.sqrt(discriminant))/(2*(self.coef[0]))
                 x2 = ((-(self.coef[1]))+math.sqrt(discriminant))/(2*(self.coef[0]))
                 return x1,x2
-            if discriminant < 0:
-                discriminant = (-discriminant)*1j**2
-                z1 = ((-(self.coef[1]))-math.sqrt(discriminant))/(2*(self.coef[0]))
-                z2 = ((-(self.coef[1]))+math.sqrt(discriminant))/(2*(self.coef[0]))
+            elif discriminant < 0:
+                discriminant = "1j*math.sqrt("+ str(discriminant*(-1)) + ")"
+                z1 = str(-(self.coef[1])) + "-" + discriminant + "/" + str((2*(self.coef[0])))
+                z2 = str(-(self.coef[1])) + "+" + discriminant + "/" + str((2*(self.coef[0])))
                 return z1,z2
-            if discriminant == 0:
+            elif discriminant == 0:
                 x1 = (-(self.coef[1]))/(2*(self.coef[0]))
                 x2 = (-(self.coef[1]))/(2*(self.coef[0]))
                 return x1,x2
@@ -131,11 +131,9 @@ class Fonction:
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(1,0,0,0,0,0)
-    f.tracage()
-    f.derive().tracage()
+    f = Fonction(4,1,2)
+    print(f.x(0))
     print(f)
-    print(f.derive())
     print("Fin du module.")
     while 1:
         os.system("pause")
