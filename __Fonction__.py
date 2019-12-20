@@ -128,7 +128,9 @@ class Fonction:
         """
         Renvoie en string la factorisation de la fonction
         """
-        facteur = None
+        facteur = str()
+        for index in range(1,len(self.coef),2):
+            facteur += "(" + str(self.coef[index]) + ")*"
         return facteur
 
 
