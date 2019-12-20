@@ -124,6 +124,12 @@ class Fonction:
             i = i
             derive = derive.derive()
         return derive
+    def factorisation(self):
+        """
+        Renvoie en string la factorisation de la fonction
+        """
+        facteur = None
+        return facteur
 
 
 
