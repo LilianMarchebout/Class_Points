@@ -127,6 +127,17 @@ class Fonction:
     def tangente(self, a):
         derive = self.derive()
         tangente = str(derive.y(a)) + "*" +  "(x-" + "(" + str(a) + ")" + ")" + "+" + str(self.y(a))
+        tortue = fonc.tortue()
+        tortue.speed(0)
+        tortue.up()
+        precision = 1*2 # 1800 precision normale avec un tracage de 1x par 1x 
+        for i in range(-precision,precision):
+            u = i*(1800/precision)
+            print(str(u) + " " + str(eval(tangente.replace("x", str(u)))))
+            tortue.goto(u, eval(tangente.replace("x", str(u))))
+            tortue.down()
+            tortue.ht()
+        tortue.up()
         return tangente
     def factorisation(self):
         """
@@ -146,7 +157,7 @@ if __name__ == "__main__":
     f = Fonction(4,1,2)
     for i in range(-180, 180):
         print(f.tangente(i))
-        f.tangente(i).tracage()
+        f.tangente(i)
     print("Fin du module.")
     while 1:
         os.system("pause")
