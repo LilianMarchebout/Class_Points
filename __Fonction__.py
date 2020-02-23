@@ -5,4 +5,5 @@ import os
 import math
 
 class Fonction:
-    
+    def __init__(self):
+        pass
