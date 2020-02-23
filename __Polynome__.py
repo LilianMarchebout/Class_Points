@@ -124,6 +124,10 @@ class Fonction:
             i = i
             derive = derive.derive()
         return derive
+    def tangente(self, a):
+        derive = self.derive()
+        tangente = str(derive.y(a)) + "*" +  "(x-" + "(" + str(a) + ")" + ")" + "+" + str(self.y(a))
+        return tangente
     def factorisation(self):
         """
         Renvoie en string la factorisation de la fonction
@@ -140,8 +144,9 @@ if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
     f = Fonction(4,1,2)
-    print(f.x(0))
-    print(f)
+    for i in range(-180, 180):
+        print(f.tangente(i))
+        f.tangente(i).tracage()
     print("Fin du module.")
     while 1:
         os.system("pause")
