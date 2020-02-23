@@ -5,7 +5,7 @@ import os
 import math
 
 
-class Fonction:
+class Polynome:
     def __init__(self, *coef):
         self.coef = coef
 
@@ -119,7 +119,7 @@ class Fonction:
         for element in range(len(self.coef)-1):
             n = -(element-(len(self.coef)-1))
             coefDerive.append(n*self.coef[element])
-        derive = Fonction(coefDerive)
+        derive = Polynome(coefDerive)
         for i in range(nombre_derive-1):
             i = i
             derive = derive.derive()
@@ -154,7 +154,7 @@ class Fonction:
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
-    f = Fonction(4,1,2)
+    f = Polynome(4,1,2)
     for i in range(-1, 1):
         i *= 100
         print(f.tangente(i))
