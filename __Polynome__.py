@@ -155,7 +155,8 @@ if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
     fonc.repere(fonc.tortue())
     f = Fonction(4,1,2)
-    for i in range(-180, 180):
+    for i in range(-1, 1):
+        i *= 100
         print(f.tangente(i))
         f.tangente(i)
     print("Fin du module.")
