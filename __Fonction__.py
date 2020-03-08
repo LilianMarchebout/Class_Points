@@ -19,9 +19,12 @@ class Fonction:
 
 if __name__ == "__main__":
     print("Lancement du module __Fonction__ en cours...")
-    f = Fonction("math.cos(x) / math.sin(x)")
+    f = Fonction("math.sin(x) / math.cos(x)")
+    g = Fonction("math.tan(x)", 'g')
     print(f)
+    print(g)
     f.y(6, "O")
+    g.y(6, 'O')
     print("Fin du module.")
     while 1:
         os.system("pause")
