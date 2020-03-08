@@ -76,7 +76,10 @@ def u(fonction):
     elif "x**" in fonction:
         n = eval(fonction[:fonction.index("x")-1])
         e = eval(fonction[fonction.index("**")+2:])
-        return str(n*e) + "*x**" + str(e-1)
+        if e == 1:
+            return n
+        else:
+            return str(n*e) + "*x**" + str(e-1)
     elif "math.sqrt(x)" in fonction:
         return "1/(2*math.sqrt(x))"
 
