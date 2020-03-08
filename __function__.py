@@ -80,8 +80,16 @@ def u(fonction):
             return n
         else:
             return str(n*e) + "*x**" + str(e-1)
+    elif "1/x**" in fonction:
+        e = eval(fonction[fonction.index("**")+2:])
+        return "-(" + str(e) + ")/x**" + str(e+1)
     elif "math.sqrt(x)" in fonction:
         return "1/(2*math.sqrt(x))"
+    elif 'math.sin(x)' in fonction:
+        return "math.cos(x)"
+    elif "math.cos(x)" in fonction:
+        return "-(math.sin(x))"
+    
 
 if __name__ == "__main__":
     print("Lancement du module __function__ en cours...")
