@@ -71,7 +71,7 @@ def int_decimal(number):
     else:
         return number
 def u(fonction):
-    if "x" in fonction != True:
+    if "x" not in fonction:
         return "0"
     elif "x**" in fonction:
         n = eval(fonction[:fonction.index("x")-1])
