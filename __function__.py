@@ -74,8 +74,7 @@ def u(fonction):
     if "x**" in fonction:
         n = eval(fonction[:fonction.index("x")-1])
         e = eval(fonction[fonction.index("**")+2:])
-        u = str(n*e) + "*x**" + str(e-1)
-        return u
+        return str(n*e) + "*x**" + str(e-1)
 
 if __name__ == "__main__":
     print("Lancement du module __function__ en cours...")
