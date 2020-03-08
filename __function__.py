@@ -70,8 +70,14 @@ def int_decimal(number):
         return int(strNumber[:strNumber.index('.')])
     else:
         return number
+def u(fonction):
+    if "x**" in fonction:
+        n = eval(fonction[:fonction.index("x")-1])
+        e = eval(fonction[fonction.index("**")+2:])
+        u = str(n*e) + "*x**" + str(e-1)
+        return u
 
 if __name__ == "__main__":
     print("Lancement du module __function__ en cours...")
-    print(int_decimal(2.004))
+    print(u("5*x**6"))
     print("Fin du module.")
