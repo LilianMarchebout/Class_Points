@@ -71,12 +71,16 @@ def int_decimal(number):
     else:
         return number
 def u(fonction):
-    if "x**" in fonction:
+    if "x" in fonction != True:
+        return "0"
+    elif "x**" in fonction:
         n = eval(fonction[:fonction.index("x")-1])
         e = eval(fonction[fonction.index("**")+2:])
         return str(n*e) + "*x**" + str(e-1)
+    elif "math.sqrt(x)" in fonction:
+        return "1/(2*math.sqrt(x))"
 
 if __name__ == "__main__":
     print("Lancement du module __function__ en cours...")
-    print(u("5*x**6"))
+    print(u("5"))
     print("Fin du module.")
